@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Stage2 - 18059938'){
 		steps {
-		 docker { run -d -it -p 5000:80 --name=stage2-18059938-container -it apache2-18059938-image /bin/sh }
+		 docker { run -d --name=stage2-18059938-container -it apache2-18059938-image /bin/sh }
 		}
 		}
 		parallel {
