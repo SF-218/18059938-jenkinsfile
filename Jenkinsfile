@@ -13,7 +13,6 @@ pipeline {
 			image 'apache2-18059938-image:latest'
 			reuseNode true
 			}
-			}
 		}
 		stage('Stage3 - 18059938') {
 			steps {
