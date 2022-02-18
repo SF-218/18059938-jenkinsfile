@@ -13,7 +13,6 @@ pipeline {
 			image 'apache2-18059938-image:latest'
 			reuseNode true
 			}
-		sh 'apache2-18059938-image --version'
 		sh 'docker run -d --name=stage2-18059938-container -it apache2-18059938-image .'
 			}
 		}
