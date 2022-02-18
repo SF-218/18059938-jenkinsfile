@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Stage2 - 18059938'){
 		steps {
-		 docker { run -d --name=stage2-18059938-container -it apache2-18059938-image /bin/sh }
+		 docker run -d --name=stage2-18059938-container -it apache2-18059938-image /bin/sh
 		}
 		}
 		parallel {
@@ -32,7 +32,7 @@ pipeline {
 				echo 'Work Release - 18059938'
 			}
 			}
-		}
+		}}
 	}
 
 }
