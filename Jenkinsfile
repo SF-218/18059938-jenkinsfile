@@ -8,6 +8,7 @@ pipeline {
 		}
 		stage('Stage2 - 18059938'){
 		steps {
+		parallel (
 		docker {
 			image 'apache2-18059938-image:latest'
 			reuseNode true
@@ -16,18 +17,18 @@ pipeline {
 		sh 'docker run -d --name=stage2-18059938-container -it apache2-18059938-image .'
 			}
 		}
-		parallel {
-			stage('Stage3 - 18059938') {
+		stage('Stage3 - 18059938') {
 			steps {
 				echo 'Stage 3 Completed - 18059938'
 			}		
 			}
-			stage('Stage4 - 18059938') {
-			steps {
-				input('Proceed to release the work?')
+		)
+		stage('Stage4 - 18059938') {
+		steps {
+			input('Proceed to release the work?')
 			}
 			}
-			stage('Stage5 - 18059938') {
+		stage('Stage5 - 18059938') {
 			when {
 				not {
 					branch "master executes"
