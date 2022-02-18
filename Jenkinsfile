@@ -7,14 +7,13 @@ pipeline {
 		}
 		}
 		stage('Stage2 - 18059938'){
+		steps {
 		docker {
 			image 'apache2-18059938-image:latest'
 			reuseNode true
 		}
-		steps {
 		sh 'apache2-18059938-image --version'
 		sh 'docker run -d --name=stage2-18059938-container -it apache2-18059938-image .'
-		}
 		}
 		parallel {
 			stage('Stage3 - 18059938') {
