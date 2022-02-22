@@ -10,7 +10,6 @@ pipeline {
 		stage('Create Docker Container') {
 			parallel {
 				stage('Stage2 - 18059938') {
-					agent { label 'docker' }					
 					steps {
 						sh "docker run -d --name 'stage2-18059938-container' -it apache2-18059938-image:latest"
 					}
