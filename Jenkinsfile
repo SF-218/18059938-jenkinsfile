@@ -12,11 +12,7 @@ pipeline {
 				stage('Stage2 - 18059938') {
 					steps {
 						sh "docker run -d --name 'stage2-18059938-container' -it apache2-18059938-image:latest"
-					}
-					post {
-						success { 
-							echo 'Stage 2 Completed - 18059938'
-						}
+						echo 'Stage 2 Completed - 18059938'
 					}
 				}
 				stage('Stage3 - 18059938') { 
