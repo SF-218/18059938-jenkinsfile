@@ -11,7 +11,7 @@ pipeline {
 			parallel {
 				stage('Stage2 - 18059938') {
 					steps {
-						sh "docker run -d --name 'stage2-18059938-container-dummy' -it apache2-18059938-image:latest"
+						sh "docker run --rm --name 'stage2-18059938-container-dummy' -it apache2-18059938-image:latest"
 						echo 'Stage 2 Completed - 18059938'
 					}
 				}
