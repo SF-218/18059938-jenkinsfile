@@ -10,10 +10,10 @@ pipeline {
 		stage('Create Docker Container') {
 			parallel {
 				stage('Stage2 - 18059938') {
-					docker {
-						image 'apache2-18059938-image'
-					}
 					steps {
+						docker {
+							image 'apache2-18059938-image'
+						}
 						sh "docker run -d --name 'stage2-18059938-container' -it apache2-18059938-image:latest"
 						echo 'Stage 2 Completed - 18059938'
 					}
