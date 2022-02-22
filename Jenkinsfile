@@ -25,7 +25,6 @@ pipeline {
 				echo 'Stage 3 Completed - 18059938'
 			}		
 			}
-			)
 		}
 		stage('Stage4 - 18059938') {
 		steps {
